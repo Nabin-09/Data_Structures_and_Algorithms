@@ -6,7 +6,7 @@
      - [1_Count_Digits_Orthodox](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/1_Count_Digits_Orthodox.cpp)<br>
      - [2_Count_Digits_Pro](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/2_Count_Digits_Pro.cpp)<br>
      - [3_Reverse_Number](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/3_Reverse_Number.cpp)<br>
-     - [4_Palindrome_Number(https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/4_Palindrome_Number.cpp)<br>
+     - [4_Palindrome_Number](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/4_Palindrome_Number.cpp)<br>
      - [5_Armstrong_Number](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/5_Armstrong_Number.cpp)<br>
      - [6_Divisors](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/6_Divisors.cpp)<br>
 2. [2-Recursion](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/1-Basics/2-Recursion)
