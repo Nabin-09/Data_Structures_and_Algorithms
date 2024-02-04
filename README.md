@@ -1,7 +1,7 @@
 # Welcome to my DSA repository !
 `DSA Practice Problems as well as solutions are given in the repository1`<br>
-
-### 1.[Basic Mathematical Problems](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/1_Basic_Mathematical_Problems)<br>
+## 1-Basics
+### 1. [Basic Mathematical Problems](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/1_Basic_Mathematical_Problems)<br>
   - [Count_Digits_Orthodox](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/1_Count_Digits_Orthodox.cpp)<br>  
   -  [Count_Digits_Pro](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/2_Count_Digits_Pro.cpp)<br>  
   - [Reverse_Number](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1_Basic_Mathematical_Problems/3_Reverse_Number.cpp)<br>  
