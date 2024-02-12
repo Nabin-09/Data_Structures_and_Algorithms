@@ -1,5 +1,14 @@
 #include<iostream>
 #include<bits/stdc++.h>
+/*
+USORTED ARRAY : 5 4 13 8 9
+1st iteration : the smallest element is swapped with Oth index
+                4 5 13 8 9
+2nd iteration : 2nd smallest number is placed at 1st index
+                4 5 13 8 9
+3rd iteration : 4 5 8 13 9
+4th iteration : 4 5 8 9 13
+hence we need (n-1) iteration to sort an array of n elements*/
 using namespace std;
 void Selection_Sort(int arr[],int n){
     for(int i = 0;i<=n-2;i++){
