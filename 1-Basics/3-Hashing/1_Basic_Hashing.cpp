@@ -7,6 +7,7 @@ int main()
     cout<<"Enter the number of elements : "<<endl;
     cin>>n;
     int arr[n];
+    //we can define array of length 1e6 in a function and 1e7 globally(when we define elements globally its initialised with 0).
     for(int i=0;i<n;i++){
         cout<<"Enter the element "<<i+1<<" : "<<endl;//taking the array input
         cin>>arr[i];
