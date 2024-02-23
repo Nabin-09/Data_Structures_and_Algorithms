@@ -13,4 +13,8 @@
    - [Printing_natural_nos_using_recursion](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1-Basics/2-Recursion/2_Natural_Numbers.cpp)<br>
 ### 3. [Hashing](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/1-Basics/3-Hashing)<br>
    - [Intro_Hashing](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/1-Basics/3-Hashing)<br>
+   - [Character_Hashing](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/1-Basics/3-Hashing/2_Character_hashing.cpp)
+## 2-Sorting Techiques
+  - [Selection Sort](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/2-Sorting-techniques/1_Selection_Sort.cpp)
+  - [Bubble Sort](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/2-Sorting-techniques/Bubble_Sort.cpp)
    
