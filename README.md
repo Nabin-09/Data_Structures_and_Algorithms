@@ -17,4 +17,13 @@
 ## 2-Sorting Techiques
   - [Selection Sort](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/2-Sorting-techniques/1_Selection_Sort.cpp)
   - [Bubble Sort](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/2-Sorting-techniques/Bubble_Sort.cpp)
+  - [Insertion Sort](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/2-Sorting-techniques/3_Insertion_Sort.cpp)
+## 3-Arrays
+### 1. [Basics of Array](https://github.com/Nabin-09/Data_Structures_and_Algorithms/tree/main/3-Arrays/BasicProblems)
+  - [Introduction](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/1_BasicsOfArray.cpp)
+  - [2nd Largest element](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/2_2ndLargestEle.cpp)
+  - [Remove Duplicates](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/3_RemoveDup.cpp)
+  - [Left rotate by 1 place](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/4_LeftRotateByOne.cpp)
+  - [Left rotate By d places](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/4_LeftRotateByOne.cpp)
+  - [Right Rotate by 1 Place](https://github.com/Nabin-09/Data_Structures_and_Algorithms/blob/main/3-Arrays/BasicProblems/6_RightRotateByOnePlace.cpp)
    
