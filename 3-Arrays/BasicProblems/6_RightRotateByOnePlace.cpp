@@ -10,7 +10,6 @@ void PrintArray(int arr[], int n)
     }
     cout << endl;
 }
-
 void TakeInput(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
