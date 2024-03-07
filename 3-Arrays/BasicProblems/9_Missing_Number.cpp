@@ -13,7 +13,7 @@ void TakeInput(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        if (i == 0 )
+        if (i == 0)
         {
             cout << "Enter the " << i + 1 << "st element of array: ";
             cin >> arr[i];
@@ -35,31 +35,24 @@ void TakeInput(int arr[], int n)
         }
     }
 }
-void reverse(int arr[],int start,int end){
-    while(start<=end){
-        int temp=arr[start];
-        arr[start]=arr[end];
-        arr[end]=temp;
-        start++;
-        end--;
+int MissingNumber(int arr[],int n){
+    int sum=0;
+    for(int i=0;i<n;i++){
+        sum+= arr[i];
     }
-}
-void LeftRotatebyD(int arr[],int n,int d){
-    reverse(arr,0,d-1);
-    reverse(arr,d,n-1);
-    reverse(arr,0,n-1);
+    int sum2=0;
+    for(int i=1;i<=n+1;i++){
+        sum2+=i;
+    }
+    return sum2-sum;
 }
 int main()
 {
-    cout<<"Enter the size of array : "<<endl;
     int n;
+    cout<<"Enter the size of array : "<<endl;
     cin>>n;
     int arr[n];
     TakeInput(arr,n);
-    cout<<"Enter the places about which the array has to be rotated : "<<endl;
-    int d;
-    cin>>d;
-    LeftRotatebyD(arr,n,d);
-    PrintArray(arr,n);
+    cout<<"Missing number : "<<MissingNumber(arr,n);
     return 0;
 }
