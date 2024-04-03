@@ -6,19 +6,17 @@ int main()
     cin>>t;
     int sum = 0;
     while(t--){
-        int sol[3];
+        int arr[3];
         for(int i = 0;i<3;i++){
-            cin>>sol[i];
+            cin>>arr[i];
         }
-       
         int count = 0;
         for(int i = 0;i<3;i++){
-            if(sol[i] == 1){
+            if(arr[i] == 1)
             count++;
-            if(count>=2)
-            sum++;
-            }
         }
+        if(count>=2)
+        sum++;
     }
     cout<<sum;
     return 0;
