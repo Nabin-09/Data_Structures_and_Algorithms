@@ -1,0 +1,3 @@
+[submodule "CP"]
+	path = CP
+	url = https://github.com/Nabin-09/Competitive-Programming.git
