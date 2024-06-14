@@ -1,0 +1,82 @@
+Primality Test : Determining if a number is prime or not.
+Brute/Naive :
+#include<iostream>
+using namespace std;
+bool isPrime(int n){
+    if(n==1){
+        return false;
+    }
+    for(int i = 2;i<n;i++){
+        if(n%i == 0)
+        return false;
+    }
+    return true;
+}
+int main()
+{
+    int n ;
+    cout<<"Enter the Number : "<<endl;
+    cin>>n;
+    if(isPrime(n))
+    cout<<n<<" is Prime !"<<endl;
+    else
+    cout<<n<<" is not Prime ! "<<endl;
+    return 0;
+}
+Time Complexity : O(n)
+
+Better Approach :
+All divisors of a number N appear in pairs (a,b) such that a*b = N
+for eg when N = 12
+d = 1 ,2 ,3 , 4 , 6 , 12
+Pairs are : (1,12) , (2,6) , (3,4) 
+hence , there will be no need to find the other number if we find one element.
+Limit to run the loop:
+for a divisor pair (a,b) one of them lies behind sqrt root of N and other lies ahead of it.
+Proof : 
+Case 1 : (a,b) are behind sqrt(N)
+then , a<sqrt(N) and b<sqrt(N)
+therefore , a*b<N and not true.
+Case 2 : (a,b) are more than sqrt(N)
+then a>sqrt(N) and b > sqrt(N)
+hence , a*b > N
+Case 3 : (a,b)
+ subcase 1 :  a > sqrt(N) and b<sqrt(N)
+              a = N/b
+              a = √N * √N/b (1<√N/b,always)
+	      a = √N *(1+x)
+Hence ,       a>√N
+ Subcase 2 : b>√N and a<√N
+           1>√N/b
+           a = √N * (1-x)
+      Hence , a<√N
+Time Complexity : O(√N)
+Code : 
+#include<iostream>
+using namespace std;
+bool IsPrime(int n ){
+    if(n==1)
+    return false;
+    for(int i = 2;i*i<=n;i++){
+        if(n%i==0)
+        return false;
+    }
+    return true;
+}
+int main()
+{
+    int n ;
+    cout<<"Enter the Number : "<<endl;
+    cin>>n;
+    if(IsPrime(n))
+    cout<<n<<" is Prime !"<<endl;
+    else
+    cout<<n<<" is not Prime ! "<<endl;
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------
+
+   
+ 
+
+
