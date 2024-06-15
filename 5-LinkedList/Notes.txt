@@ -1,0 +1,107 @@
+LINKED LISTS : 
+In C++, a linked list is a data structure used to store a sequence of elements. Unlike arrays, which store elements in contiguous memory locations, a linked list consists of nodes where each node contains a data element and a pointer (or reference) to the next node in the sequence. This structure allows for efficient insertion and deletion of elements, as it doesn’t require shifting other elements around as in arrays.
+code : 
+#include<iostream>
+using namespace std;
+struct Node{
+    int data;
+    Node* next;
+    Node(int data1,Node* next1){
+        data = data1;
+        next = next1;
+    }
+};
+int main()
+{
+    Node x = Node(2,nullptr); // Initialising just like we initialise integers or float
+    Node* y = &x; // getting its memory address to use further
+    /*Better than using above syntax we can use : */
+    Node* m = new Node(3,nullptr); // m stores a pointer to the memory location 
+    cout<<m; //0x736f08
+    /*
+    Node z = Node(3,nullptr)
+    cout<<z Throws error how can we even print an Object
+    we can print z.data and z.next 
+    and if we do 
+    Node* y = new Node(2,nullptr)
+    we cannot use y.data and y.next we must use y->data and y->next
+    */
+    return 0;
+}
+Now converting an Array to Linked List : 
+Code:
+#include<iostream>
+#include<vector>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    public:
+    Node(int data1, Node* next1){
+        data = data1;
+        next = next1;
+    }
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
+};
+Node* ConvertArrtoLL(vector<int> &arr){
+    Node* head = new Node(arr[0]);
+    Node* mover = head;
+    for(int i = 1;i<arr.size();i++){
+        Node* temp = new Node(arr[i]);
+        mover->next = temp;
+        mover = temp;//mover =  mover -> next (equivalent)
+    }
+    return head;
+}
+int main()
+{
+    vector<int> arr = {2,4,5,6,7};
+    Node* head = ConvertArrtoLL(arr);
+    cout<<head->data; // 2
+    return 0;
+}
+Traversing through a Linked List : 
+Code : 
+#include<iostream>
+#include<vector>
+using namespace std;
+class Node{
+    public:
+    int data;
+    public:
+    Node* next;
+    Node(int data1,Node* next1){
+         data = data1;
+         next = next1;
+    }
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
+};
+Node* ConvertArrtoLL(std::vector<int> &arr){
+    Node* head = new Node(arr[0]);
+    Node* mover = head;
+    for(int i = 1;i<arr.size();i++){
+        Node* temp = new Node(arr[i]);
+        mover->next = temp;
+        mover = temp;//mover =  mover -> next (equivalent)
+    }
+    return head;
+}
+
+int main()
+{
+    vector<int> arr = {2,3,4,6,7};
+    Node* head = ConvertArrtoLL(arr);
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp = temp->next; // 2 3 4 6 7
+    }
+    return 0;
+}
