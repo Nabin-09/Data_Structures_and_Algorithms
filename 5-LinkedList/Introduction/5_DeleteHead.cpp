@@ -6,12 +6,12 @@ class Node{
     int data;
     Node* next;
     public:
-    Node(int data1,Node* next1){
+    Node(int data1,Node* nxt1){
         data = data1;
-        next = next1;
+        next = nxt1;
     }
-    Node(int data1){
-        data = data1;
+    Node(int d){
+        data = d;
         next = nullptr;
     }
 };
@@ -20,24 +20,28 @@ Node* ConvertToLL(vector<int> &arr){
     Node* mover = head;
     for(int i = 1;i<arr.size();i++){
         Node* temp = new Node(arr[i]);
-        mover->next = temp;
+        mover->next = temp; 
         mover = temp;//mover =  mover -> next (equivalent)
+
     }
-    return head;
+  return head;
 }
-int LengthofLL(Node* head){
-    int cnt = 0;
+Node* Delethead(Node* head){
+    if(head == NULL) return head;
     Node* temp = head;
-    while(temp){
-        temp = temp->next;
-        cnt++;
-    }
-    return cnt;
+    head = head->next;
+    delete temp;
+    return head;
 }
 int main()
 {
-    vector<int> arr = {1,2,3,4,5,6,7};
+    vector<int> arr = {1,2,3,4,5};
     Node* head = ConvertToLL(arr);
-    cout<<LengthofLL(head);
+    head = Delethead(head);
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
     return 0;
 }
