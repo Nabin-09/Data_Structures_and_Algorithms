@@ -1,5 +1,13 @@
 LINKED LISTS : 
 In C++, a linked list is a data structure used to store a sequence of elements. Unlike arrays, which store elements in contiguous memory locations, a linked list consists of nodes where each node contains a data element and a pointer (or reference) to the next node in the sequence. This structure allows for efficient insertion and deletion of elements, as it doesn’t require shifting other elements around as in arrays.
+Node x = Node (2,nullptr); //created a variable of type Node
+Node* y = &x;// getting address of my user defined variable.
+we could rather use :
+Node* y = new Node(2,nullptr); //new pointer directly gives pointer to the memory location.
+Node y = Node(2,nullptr);//this is just creating an Object
+cout<<y.data<<y.next;//this would work.
+When we do Node* y = new Node(2,nullptr);
+We will be using y->data , y->next.
 code : 
 #include<iostream>
 using namespace std;
