@@ -113,3 +113,23 @@ int main()
     }
     return 0;
 }
+Length of Linked List: 
+code :
+int LengthofLL(Node* head){
+    int cnt = 0;
+    Node* temp = head;
+    while(temp){
+        temp = temp->next;
+        cnt++;
+    }
+    return cnt;
+}
+----------------------------------------------------------------------------------------------
+Deleting Element of a Linked List:
+Deleting head :
+Node* deleteHead(Node* head){
+  Node* temp = head ;
+  head = head->next;
+  free(temp);
+  return head;
+}
