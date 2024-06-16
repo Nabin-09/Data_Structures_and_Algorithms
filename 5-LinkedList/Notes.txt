@@ -36,7 +36,7 @@ int main()
     */
     return 0;
 }
-Now converting an Array to Linked List : 
+*****Now converting an Array to Linked List : 
 Code:
 #include<iostream>
 #include<vector>
@@ -132,4 +132,42 @@ Node* deleteHead(Node* head){
   head = head->next;
   free(temp);
   return head;
+}
+Deleting Tail of Linked List : 
+code :
+Node* DeleteTail(Node* head) {
+    if (head == nullptr || head->next == nullptr)
+        return nullptr;
+
+    Node* temp = head;
+    while (temp->next->next != nullptr) {
+        temp = temp->next;
+    }
+
+    delete temp->next; // Use delete to deallocate memory
+    temp->next = nullptr;
+
+    return head;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6};
+    Node* head = ConverttoLL(arr);
+    head = DeleteTail(head);
+
+    Node* temp = head;
+    while (temp) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+
+    // Free the remaining nodes to avoid memory leak
+    while (head) {
+        Node* toDelete = head;
+        head = head->next;
+        delete toDelete;
+    }
+
+    return 0;
 }
