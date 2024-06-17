@@ -196,3 +196,55 @@ Node* DeleteK(Node* head,int k){
     }
     return head;
 }
+Insertion of elements in a Linked List:
+Inserting element at head - 
+code :
+Simply creating a new Node and pointing it towards head.
+Node* InsertHead(int val,Node* head){
+   return new Node(val,head); //simply puts new value into head
+}
+main(){
+  head = new Node(1,head); // This will work too.
+}
+Inserting Element at kth position :
+Take an example :
+1 -> 2 -> 3 -> 4
+and we want to insert element at 3rd element:
+traverse to 2nd(k-1) element and create a new Node and put val into it.
+1 -> 2 -> 3 -> 4
+    temp
+Now, create new Node n = 10
+1 -> 2 -> 3 -> 4
+     10
+   n's next = temp's next
+1 -> 2 -> 3 -> 4
+   temp's next = n
+
+code :
+Node* InsertAtK(Node* head,int el, int k){
+    if(head==NULL){
+        if(k==1){
+            return new Node(el);
+        }
+        else{
+            return head;
+        }
+
+    }
+    if(k==1){
+        return new Node(el, head);   
+    }
+    int cnt = 0;
+    Node* temp = head;
+    while(temp!=NULL){
+        cnt++;
+        if(cnt == (k-1)){
+            Node* n = new Node(el, temp->next);
+            temp->next = n;
+            break; 
+        }
+        temp = temp->next;
+    }
+    return head;
+}    
+
