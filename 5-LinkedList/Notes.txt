@@ -171,3 +171,28 @@ int main() {
 
     return 0;
 }
+Deleting K-th element of Linked List :
+code : 
+Node* DeleteK(Node* head,int k){
+    if(head == NULL ) return head;
+    if(k==1){ //Very Basic and same as removing head
+        Node* temp = head;
+        head = head->next;
+        delete(temp);
+        return head; 
+    }
+    int cnt = 0;
+    Node* temp = head;
+    Node* prev = NULL;
+    while(temp){
+        cnt++;
+        if(cnt == k){
+            prev->next  = prev->next->next; //connects k-1'th element to k+1's address.
+            delete(temp);
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+    return head;
+}
