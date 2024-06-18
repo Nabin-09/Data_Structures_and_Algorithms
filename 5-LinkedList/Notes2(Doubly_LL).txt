@@ -1,0 +1,2 @@
+DOUBLY LINKED LIST :
+It points towards the next as well as points towards the previous node.
