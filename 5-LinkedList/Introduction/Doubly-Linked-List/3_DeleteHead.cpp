@@ -19,7 +19,7 @@ class Node{
         back = nullptr;
     }
 };
-Node* ConvertToLL(vector<int> &arr){
+Node* ConvertToDLL(vector<int> &arr){
     Node* head = new Node(arr[0]);
     Node* prev = head;
     for(int i = 1;i<arr.size();i++){
@@ -49,7 +49,7 @@ Node* deleteHead(Node* head){
 int main()
 {
     vector<int> arr = {1,2,3,4,5};
-    Node* head = ConvertToLL(arr);
+    Node* head = ConvertToDLL(arr);
     head = deleteHead(head);
     print(head); // 2 3 4 5
     return 0;

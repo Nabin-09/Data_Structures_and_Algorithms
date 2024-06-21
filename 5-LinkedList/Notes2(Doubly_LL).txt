@@ -1,3 +1,111 @@
+PreRequisites :
+In C++, `.` (dot) and `->` (arrow) are operators used to access members (attributes or methods) of objects. They are primarily used in different contexts depending on how the object or the structure is stored or referenced. Here’s a detailed explanation of each:
+
+### The `.` Operator
+
+- **Context**: Used with an object or structure (struct) when you have a direct instance of that object or struct.
+- **Usage**: `object.member` or `struct.member`
+- **Example**:
+  ```cpp
+  struct Point {
+      int x, y;
+  };
+
+  Point p;
+  p.x = 10; // Using the dot operator to access and set member 'x'
+  p.y = 20; // Using the dot operator to access and set member 'y'
+  ```
+- **Explanation**: In this example, `p` is a direct instance of `Point`. To access the members `x` and `y`, you use the `.` operator.
+
+### The `->` Operator
+
+- **Context**: Used with a pointer to an object or structure when you have a pointer to the instance.
+- **Usage**: `pointer->member`
+- **Example**:
+  ```cpp
+  struct Point {
+      int x, y;
+  };
+
+  Point* ptr = new Point;
+  ptr->x = 10; // Using the arrow operator to access and set member 'x' through a pointer
+  ptr->y = 20; // Using the arrow operator to access and set member 'y' through a pointer
+
+  delete ptr; // Remember to delete allocated memory
+  ```
+- **Explanation**: In this case, `ptr` is a pointer to a `Point` object. The `->` operator is used to access the members `x` and `y` through this pointer.
+
+### Differences Between `.` and `->`
+
+1. **Type of Access**:
+   - `.` is used for accessing members of an object or struct when you have the actual instance.
+   - `->` is used for accessing members of an object or struct through a pointer to that instance.
+
+2. **Syntax and Usability**:
+   - With `.` you directly access the member from the instance.
+   - With `->`, the compiler automatically dereferences the pointer to access the member. It is equivalent to `(*pointer).member`.
+
+3. **Memory Management**:
+   - Instances accessed with `.` are typically allocated on the stack (automatic storage duration) unless explicitly declared otherwise.
+   - Instances accessed with `->` are often dynamically allocated on the heap and require explicit memory management (using `new` and `delete`).
+
+4. **Safety and Convenience**:
+   - The dot operator (`.`) is straightforward and used with non-pointer types, hence safer in terms of dereferencing errors.
+   - The arrow operator (`->`) simplifies accessing members through pointers without manually dereferencing them with `*`.
+
+### Examples to Illustrate the Differences
+
+#### Example 1: Using `.` with Struct
+
+```cpp
+struct Rectangle {
+    int width, height;
+};
+
+Rectangle rect;
+rect.width = 50;  // Directly accessing and setting width
+rect.height = 100; // Directly accessing and setting height
+```
+
+#### Example 2: Using `->` with Struct Pointer
+
+```cpp
+struct Rectangle {
+    int width, height;
+};
+
+Rectangle* rectPtr = new Rectangle;
+rectPtr->width = 50;  // Accessing and setting width through a pointer
+rectPtr->height = 100; // Accessing and setting height through a pointer
+
+delete rectPtr; // Clean up dynamically allocated memory
+```
+
+#### Example 3: Comparing `.` and `->` with Class Objects
+
+```cpp
+class Car {
+public:
+    void start() {
+        // Implementation
+    }
+};
+
+Car myCar;
+myCar.start(); // Using dot operator to call start method
+
+Car* carPtr = new Car;
+carPtr->start(); // Using arrow operator to call start method through a pointer
+
+delete carPtr; // Clean up dynamically allocated memory
+```
+
+### Summary
+
+- Use `.` when dealing with direct instances of an object or structure.
+- Use `->` when dealing with pointers to objects or structures.
+
+Understanding these operators is crucial for proper memory management and for writing clear, bug-free C++ code, especially when dealing with pointers and dynamic memory allocation.
 DOUBLY LINKED LIST :
 It points towards the next as well as points towards the previous node.
 Basic structure of Doubly Linked List:
@@ -20,4 +128,43 @@ class Node{
         back1 = nullptr;
     }
 };
+Converting Array to Doubly Linked List:
+code:
+Node* ConvertToLL(vector<int> &arr){
+    Node* head = new Node(arr[0]);
+    Node* prev = head;
+    for(int i = 1;i<arr.size();i++){
+        Node* temp = new Node(arr[i],nullptr,prev);
+        prev->next = temp;
+        prev = temp;
+    }
+    return head;
+}
+Deleting head of a Doubly Linked List :
+When the DLL has many elements we need to move head to 2nd element and segregate the first element by moving 
+its next to null and its back is always pointing to null.
+code:
+Node* deleteHead(Node* head){
+    if(head == NULL || head->next == NULL){
+        return NULL;
+    }
+    Node * prev = head ; //creating a Node to store head of the DLL.
+    head = head -> next ; //sending head to 2nd element
+    head -> back = nullptr; //the back of islolated element is pointing to null
+    prev -> next = nullptr; // the next of islolated element is pointing to null
+    free(prev);// delete the isolated element.
+    return head;
+}
+Deleting tail of DOubly Linked List:
+Traverse till the tail of DLL.
+pseudocode:
+tail = head ;
+while(tail->next!=NULL){
+  tail = tail->next;
+}
+prev = tail->back;
+prev->next = nullptr;
+tail->back = nullptr;
+free(tail);
 
+code :
