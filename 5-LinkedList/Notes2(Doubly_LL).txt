@@ -168,3 +168,60 @@ tail->back = nullptr;
 free(tail);
 
 code :
+Node* DeleteTail(Node* head) {
+    if (head == NULL || head->next == NULL) {
+        // If the list is empty or has only one node, return NULL
+        if (head != NULL) {
+            // If there's a single node, free it
+            delete head;  // Assuming nodes are allocated with 'new'
+        }
+        return NULL;
+    }
+
+    // Traverse to the second-to-last node
+    Node* tail = head;
+    while (tail->next->next != NULL) {
+        tail = tail->next;
+    }
+
+    // Now 'tail' points to the second-to-last node
+    Node* lastNode = tail->next;  // The node to delete
+
+    // Update the second-to-last node to be the new tail
+    tail->next = NULL;
+
+    // Free the memory of the last node
+    delete lastNode;  // Assuming nodes are allocated with 'new'
+
+    // Return the head of the list
+    return head;
+}
+Deleting Kth Element of DLL:
+Case 1 : 
+has a next element but no previous element 
+Case 2:
+has next as well as previous element.
+Case 3:
+for k = n, no next element but has previous element.
+          --
+       cnt = 0;
+       temp = head;
+         while(temp!=NULL){
+          c++;
+          if(cnt == k) break;
+          temp = temp-> next;
+       }
+After we have traversed to the element :
+Now temp is standing at kth node.
+Now lets take prev to a node before k.
+and front to a node after k 
+Prev = temp->back;
+front = temp->next;
+case if there's no front and back,
+if(prev == NULL && front == NULL)
+else if(prev == NULL)//It means we are at head.
+delete head;
+else if(front == NULL)//it means we are at last element.
+Case 2:
+ prev temp front
+ now , prev's next should be pointing at front and front's back should be pointing at prev.
