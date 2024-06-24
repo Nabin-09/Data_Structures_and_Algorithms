@@ -225,3 +225,48 @@ else if(front == NULL)//it means we are at last element.
 Case 2:
  prev temp front
  now , prev's next should be pointing at front and front's back should be pointing at prev.
+prev->next = front
+front->back = prev
+temp->next = nullptr;
+temp->back - nullptr;
+delete(temp);
+
+code :
+Node* DeleteKthElement(Node* head,int k){
+    if(head == NULL){
+        return NULL;
+    }
+    int cnt = 0;
+    Node* kNode = head;
+    while(kNode != NULL){
+        cnt++;
+        if(cnt == k) break;
+        kNode = kNode->next;
+    }
+    Node* prev = kNode->back;
+    Node* front = kNode->next;
+    if(prev == NULL && front == NULL){
+        return NULL;
+    }
+    else if(prev == NULL){
+        deleteHead(head);
+    }
+    else if(front == NULL){
+        return DeleteTail(head);
+    }
+    prev->next  = front;
+    front->back = prev;
+    kNode->next = nullptr;
+    kNode->back = nullptr;
+    delete(kNode);
+    return head;
+}
+------------------------------------------------------------------------------------------------------
+ INSERTION OF ELEMENT IN DOUBLY LINKED LIST :
+ element before head :
+code :
+Node* InsertBeforeHead(Node* head,int val){
+    Node* newHead = new Node(val,head,nullptr);
+    head->back = newHead;
+    return newHead;
+}
