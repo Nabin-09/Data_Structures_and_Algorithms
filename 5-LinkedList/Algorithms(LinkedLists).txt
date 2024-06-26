@@ -1,0 +1,68 @@
+FINDING MIDDLE NODE OF LINKED LISTS:
+eg : 3rd element in case of n = 5
+     4th element in case of n = 6 ans so on 
+hence , the general tern is Middle Term = ((n/2) + 1)th term.
+Naive approach  :
+Calculating the length and then then traversing to ((n/2)+1)th term.
+PesudoCode for approach :
+temp = head;
+cnt = 0;
+while(temp!= NULL){
+   cnt++;
+   temp = temp->next;
+}
+MidNode = (cnt/n) + 1;
+temp = head;
+while(temp!=NULL){
+  MidNode = MidNode - 1;
+  if(MidNode == 0) break;
+  temp = temp -> next;
+}
+reuturn temp :
+T.C -> O(N+N/2)
+S.C -> O(1)
+
+Optimal Approach (Hare and tortoise approach):
+create two pointers Slow and Fast , slow will jump one position and fast will jump 2 positions,
+example :
+1 2 3 4 5
+s
+f
+1 2 3 4 5
+  s f
+1 2 3 4 5 
+    s   f (Break when f reaches last element and return s as mid)
+           **f reaches at the last element in case if odd elements
+For even number of elements :
+1 2 3 4 5 6 
+s
+f 
+1 2 3 4 5 6
+  s f
+1 2 3 4 5 6
+    s   f
+1 2 3 4 5 6 
+      s     f (f reaches null hence return s as the midpoint)
+               **f reaches null in case of Even no of elements
+Pseudocode :
+slow = head;
+fast = head;
+while(fast!=NULL && fast->next!=NULL){
+  slow = slow->next;
+  fast = fast->next->next;
+}
+T.C = O(n/2)
+S.C = O(1)
+code :
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(fast!=NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
+};
