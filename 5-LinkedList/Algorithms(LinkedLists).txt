@@ -68,3 +68,96 @@ public:
 };
 ----------------------------------------------------------------------------------------
 REVERSE A LINKED LIST :
+Naive way :
+Traverse and insert values into stack and then push values out :
+Pesudocode :
+temp = head ;
+stack st;
+while(temp!=NULL){
+  st.push(temp->data)
+  temp = temp ->next
+}
+temp = head ;
+while(temp != NULL){
+  temp -> data  = st.top();
+  st.pop();
+  temp = temp ->next;
+}
+TC = O(2N)
+SC = O(N)
+Better Way :
+reversing the links of Linked List.
+----------------------------------------------------------------------------------------------------------
+Detecting a loop in Linked Linked :
+Naive approach : Hashing (remembering if we went through the point)
+Store <node,int> , in hashmaps
+map<Node* , int> mpp;
+ temp = head;
+ while(temp!=NULL){
+    if(mpp.find(temp))
+       return true;
+    else
+    mpp[temp] = 1;
+ temp = temp ->next;
+}
+return false;
+T.C = O( N * 2*LOG N )// traversing through LL and inserting values in map and also finding through it.
+Best Approach : Tortoise and Hare approach :
+slow moves by 1 and fast moves by 2.
+, if slow and fast pointers ever meet , it means that there's loop .
+condition to stop : move only if fast->next != NULL and fast = NULL (It can only happen if the LL is linear and has no loops)
+Pseudocode :
+slow = head , fast = head;
+while(fast!=NULL && fast->next!=NULL){
+  slow = slow->next;
+  fast = fast->next->next;
+     if(slow == fast) return true;
+  }
+return false;
+code :
+bool hasCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(fast!=NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+            if(slow == fast) return true;
+        }
+        return false;
+-------------------------------------------------------------------------------------------------------------------------------
+Detecting the starting point of loop :
+Naive approach :
+Hashing , store all nodes and values the moment we find the node again , its the starting point and if not , its linear LL.
+Pseudocode :
+map<Node* , int> mpp
+Node* temp = head;
+while(temp){
+   if(mpp.find(temp)) return temp;
+   else (mpp[temp] = 1)
+ temp = temp->next;
+}
+return NULL;
+T.C = O(N* 2* (MAP'S COMPLEXITY)
+SC = O(N)
+Best Approach : Tortoise and Hare Algorithm ;
+Detect a loop using the approach and after loop is detected , send one pointer to the head and
+move both the pointer by 1 , the point they meet is the starting point of loop :
+Pseudocode :
+slow = head , fast = head;
+while(fast!= NULL && fast->next!=NULL){
+    slow = slow -> next;
+    fast = fast ->next ->next ;
+    if (slow == fast ) {
+        slow = head;
+        while(slow!=fast){
+          slow = slow->next;
+          fast = fast->next;
+        }
+     return slow;
+    }
+  } 
+return NULL;
+ 
+Proof of Algorithm :
+L1 is the distance between head and start of loop , if
+ 
