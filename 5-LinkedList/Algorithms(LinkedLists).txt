@@ -158,6 +158,113 @@ while(fast!= NULL && fast->next!=NULL){
   } 
 return NULL;
  
-Proof of Algorithm :
-L1 is the distance between head and start of loop , if
+----------------------------------------------------------------------------------------------------------
+Reversing a Linked List using recursion.
+Break the problem into smaller problems , this is how recursion works,
+1 -> 2 -> 3 -> 4
+If LL has one node(base case) : return the node itself,
+pseudocode :  
+     if(head == NULL || head->next == NULL)
+        return head;
+If LL has two nodes:
+   3->4
+   reversed : X<-3<-4
+   3     4 
+  head  front
+  front->next = head;
+  head->next = NULL;
+  return front;(this is the new head)
+If LL has 3 nodes :
+  2->3->4
+  2    3      4
+ head front  newhead
+    call sub problem for 2 nodes :
+  2-> X<-3<- 4
+front->next = head ;
+head -> next = NULL;
+return newhead;
+If LL has 4 nodes ,
+1 -> X<-2<-3<-4
+head front   newhead
+
+reverse(head)
+  { 
+    if(head == NULL || head->next == NULL)
+        return head;
+   Node* newhead = reverse(head->next);
+   Node* first = head->next;
+   front->next = head;
+   head->next = NULL;
+   return newhead;
+}
+T.C = O(N)
+S.C = O(N){recursion uses stack space}
+-----------------------------------------------------------------------------------------
+Finding the length of a loop :
+Naive method to find it would be using hashinf , traverse through each Node and increse count ,
+if we revisit the node , Subtract current count with the count we viisted it the last time and hence,
+we will find the length of the loop .
+PesudoCode:
+map<Node, int > mpp  temp = head;
+int timer = 1;
+while(temp!= NULL){
+   if(mpp.find(temp) == NULL){
+    value = mpp[temp];
+    return timer- value;
+   }
+   mpp[temp] = timer;
+   timer++;
+   temp = temp->next;
+}
+return 0;
+}
+T.C = O(N * X) x = Log N or O(1) depends on the complexity of map.
+S.C = o(N)
+Best Approach : Tortoise and hare algorithm:
+Move slow by 1 and fast by 2 , when they collide we know that there's a loop,
+now keep slow stagnant and move the fast pointer by 1 and remember the count, when it meets slow again
+return the count.
+pseudocode:
+slow = fast = head;
+while(fast!=NULL && fast->next!= NULL){
+  slow = slow->next;
+  fast = fast->next->next;
+  if(slow == fast) return findLength(slow,fast);
+}
+return false; 
+findLength(slow,fast){
+  cnt = 1 , fast = fast->next ;
+  while(slow!= fast ){
+    cnt++;
+    fast = fast->next;
+  }
+  return cnt;
+}
+code :
+int FindLength(Node* slow , Node* fast){
+    int cnt = 1 ;
+    fast = fast->next;
+    while(fast != slow){
+        cnt++;
+        fast = fast->next;
+    }
+    return cnt;
+}
+int countNodesinLoop(struct Node *head)
+{
+    Node* slow = head;
+    Node* fast = head;
+    while(fast!=NULL && fast->next != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast){
+            return FindLength(slow , fast);
+        }
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------
+
+
+
  
