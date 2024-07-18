@@ -28,6 +28,5 @@ int main (){
         
     }
  vector < int >result= getMoreAndLess(arr,n,x);
- std::cout<<result;
     return 0;
 }
