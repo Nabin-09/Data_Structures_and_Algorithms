@@ -1,0 +1,16 @@
+BIT MANIPULATION : 
+Learn to convert Binary numbers into Decimal and vice versa.
+pesudocode to convert Decimal to Binary.
+String ConvertToBinary(int x){
+   string res = " ";
+   while(n!=1){
+    if(res % 2 == 1){
+        res+= "1";
+    }
+    else{
+        res += "0";
+    }
+    n = n / 2;
+   }
+   reverse(res);
+}

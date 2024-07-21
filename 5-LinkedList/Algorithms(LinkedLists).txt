@@ -264,6 +264,63 @@ int countNodesinLoop(struct Node *head)
     return 0;
 }
 ------------------------------------------------------------------------------------------
+Palindrome Linked List:
+Naive Appraoch :
+use a stack Data Structure , push values into stack and pop out the values.
+while popping out the values check it with original Linkedlist if temp reaches NULL it is palindrome.
+pseudocode :
+stack st;
+temp = head;
+while(temp!= NULL){
+  st.push(temp->data)
+  temp = temp->next;
+}
+temp = head;
+while(temp!=NULL){
+ {
+   if(temp->data != st.top()) return false;
+   temp = temp->next;
+   st.pop();
+}
+return true;,
+TC = O(2N)
+SC = O(N)
+Best Approach :(NOTE : These are singly Linked Lists)
+1 2 3 3 2 1  (n = even)
+1 -> 2 -> 3 and reverse the later half 3 <- 2 <- 1
+Find the middle of the LL using tortoise and hare algorithm,
+1 2 3 4 5 6 
+for this case we need to stop at middle element 1 (at index 2 )
+Therefore, fast->next->next = NULL;
+and now reverse the second half of Linked List ,  reverse(slow->next) and returns new head
+now , 1 -> 2 -> 3 -> 3 <- 2 <- 1 , is how the LL looks,
+first = head , second = newHead
+if(first == second){
+  first = first -> next;
+  second = second -> next;
+} 
+in case when the n is odd and then fast->next = NULL(i.e reach the last element)
+and do the same thing,
+pseudocode :
+slow = head , fast = head;
+while(fast -> next!= NULL || fast->next->next != NULL){
+  slow = slow -> next;
+  fast = fast->next->next;
+}
+Node* newHead = reverse(slow->next);
+first = head , second = newHead;
+while(second!=NULL){
+  if(first -> data == second -> data){
+      reverse(newHead);
+      return false;
+    }
+  first = first -> next;
+  second = second->next;
+ return true;
+}
+TC = O(2N) finding mid  O(N/2) , reverse(O(N/2)) , while(O(N/2)) , reverse(O(N/2))
+SC = O(1)
+
 
 
 
