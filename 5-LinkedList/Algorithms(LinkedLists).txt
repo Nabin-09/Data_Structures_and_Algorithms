@@ -320,8 +320,125 @@ while(second!=NULL){
 }
 TC = O(2N) finding mid  O(N/2) , reverse(O(N/2)) , while(O(N/2)) , reverse(O(N/2))
 SC = O(1)
+-----------------------------------------------------------------------------------------------------------
+Odd and even indexed nodes :
+Task: Group all the even and odd indexed nodes,
+1 -> 2 -> 4 -> 8 -> 5 -> 7
+Groups : 1  4  5
+         2  8  7
+Naive approach : Do it the simple way group them and return.
+T.C = O(N) 
+pseudocode :
+int arr[];
+temp = head;
+if(head == NULL || head->next = NULL) return head;
+while(temp!= NULL && temp->next != NULL){
+   arr.add(temp->data);
+   temp = temp -> next ->next;
+} //In this case if the array's size is Odd we might be skipping the last element.
+if(temp) arr.add(temp->data);
+//we have got the odd indexed elements. T.C = O(N/2);
+temp = head -> next;
+while(temp!= NULL && temp->next != NULL){
+  arr.add(temp->data);
+  temp = temp -> next -> next;
+}                                       T.C = O(N/2)
+if(temp) arr.add(temp->data);
+//Now go through the index.
+int i = 0 , temp = head;
+while(temp!=NULL){
+   temp->data = arr[i];
+   i++;
+   temp = temp -> next;
+}                                       T.C = O(N)      
+return head;
+T.C = O(2N)
+S.C = O(N) , we used an array.
 
+Optimal way : 
+changing the links for odd ones and the even ones.
+*** 1 -> 2 -> 3 -> 4 -> 5 -> 6;
+   Od   ev
+Od.next = Od.next.next;
+ev.next = ev.next.next;
+Do this simultaneously for odd and even also observe that even will always be ahead of odd,hence check even always.
+in the last node though , 5-> 6 (we didn't change this)
+                         od  ev
+therefore , store the first even node in any varible and then ,
+evenHead = ev // at the start
+odd -> next =  evenhead 
+Pseudocode :
+if(head == NULL || head->next == NULL) return head;
+odd = head;
+even = head->next;
+evenHead = head->next;
+while(even!=NULL && even->next != NULL ){
+  odd->next =  odd->next->next;
+  even->next = even->next->next;
+  
+  odd = odd->next;
+  even = even->next;
+}
+odd.next = evenhead;
+T.C = O(N)
+S.C = O(1)
+------------------------------------------------------------------------------------------------------------
+Removing the nth node from the end :
+1 -> 2 -> 3 -> 4 -> 5
+if n = 2;
+1 -> 2 -> 3-> 5
+Naive Approach :
+Count the number of nodes ,  and then reach the (Length - n)th node.
+move temp to (Length-n)th node and store the Node to be deleted somewhere and connect temp to the next's next element,
+temp->next = temp->next->next;
+and free the node ;
+Pseudocode :
+int count = 0 ;
+temp = head;
+while(temp!=NULL){
+  count++;   //counting the number of nodes.
+  temp = temp->next;
+}
+if(count == N)
+ newHead = head->next; // if the node to be deleted is the head of the LL.
+ return newHead;
+ delete head;
+}
+int res = count - n;
+while(temp!=NULL){
+  res--;
+  if(res==0) break; //traversing to the node before the one to be deleted.
+  temp = temp->next;
+}
+delNode = temp->next;
+temp->next = temp->next->next;
+ return head;
+T.C = O(Length) + O(length-N);
+S.C = O(1)
 
+Best Approach use the tortoise and hare algorithm :
+fast = head , slow = head
+move the fast for n times and then start moving fast and slow simultaneously util fast reaches the end and hence the slow 
+will be placed at a position before the node to be deleted.
+pseudocode :
+fast = head , slow = head;
+for(int i = 0 -> N){
+  fast = fast ->next;
+}
+if(fast == NULL){
+  newHead = head->next;
+  delete(head);
+  return newHead;
+}
+while(fast->next != NULL){
+  slow = slow->next;
+  fast = fast -> next;
+}
+DelNode = slow -> next;
+slow->next = slow->next->next;
+delete(DelNode);
+return head;
+   
 
 
  
