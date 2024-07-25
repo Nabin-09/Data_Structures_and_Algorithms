@@ -438,7 +438,62 @@ DelNode = slow -> next;
 slow->next = slow->next->next;
 delete(DelNode);
 return head;
-   
-
-
+-------------------------------------------------------------------------------------------------------------------------------
+Deleting the middle node of Linked List :
+we want to end up a Node before the middle element and there we skip one slow->next iteration
+pseudocode :
+fast = head ;
+slow = head;
+fast = fast->next->next;
+while(fast!=NULL && fast->next != NULL){
+  slow = slow -> next;
+  fast = fast->next->next;
+}
+DelNode = slow;
+slow->next = slow->next->next;
+delete(DelNode);
+return head;
+T.C = O(N/2)
+S.C = O(1)
+------------------------------------------------------------------------------------------------------
+Sorting a Linked List :
+Naive Solution : Pushing the values into an array ,
+temp = head;
+while(temp){
+arr.add(temp->data);
+temp = temp ->next;
+}
+sort(arr.begin(),arr.end());
+//and the convert array into LL
+while(temp){
+  temp->data =  arr[i];
+  i++;
+  temp = temp->next;
+}
+return head;
+T.C = O(N) + O(NLOG N) + O(N)
+S.C = O(N)
+Best Way : Implement Merge sort in LL itself
+Merge Sort :
+ms(arr,low,high){
+   if(low == high)
+    return;
+   mid = (low+high)/2;
+   ms(arr,low,high);
+   ms(arr,mid+1,,high);
+   merge(arr,low,mid,high);
+}
+f(head){  
+  if(head == NULL || head->next == NULL)
+   return head;
+  middle = findMiddle(head);
+  lefthead = head righthead = middle->next;
+  middle->next = NULL;
+  lefthead = ms(lefthead);
+  righthead = me(righthead);
+  reuturn merge(lefthead,righthead);
+}
+T.C = O(logN) * O(N + N/2)
+S.C = O(1)
+------------------------------------------------------------------------------------------------------------
  
