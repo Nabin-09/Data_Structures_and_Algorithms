@@ -1,3 +1,4 @@
+//Swap two numbers without using any temporary variable.
 #include<iostream>
 using namespace std;
 void swap (int &a , int &b){
