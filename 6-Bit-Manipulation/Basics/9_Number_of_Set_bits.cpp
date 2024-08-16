@@ -17,6 +17,16 @@ int CountSetBits(int n ){
 }
 int main()
 {
+    /*ALTERNATE LOGIC :
+    if we do ( n & (n-1)) , it turns of the rightmost bit , hence continue to do it until 
+    n is equal to 0 
+    cnt = 0 ;
+    while(n!= 0){
+    n = n & (n - 1);
+    cnt++;
+    }
+    Time Complexity = O(Number of set bits) , it can be O(31) for worst case.
+    */
     int n;
     cin >> n;
     cout<<CountSetBits(n)<<endl;
