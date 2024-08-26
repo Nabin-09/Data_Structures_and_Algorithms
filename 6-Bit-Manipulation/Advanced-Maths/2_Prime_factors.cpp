@@ -33,3 +33,4 @@ int main()
     }
     return 0;
 }
+//T.C = sqrt(sqrt(N) * sqrt(N)*2)
