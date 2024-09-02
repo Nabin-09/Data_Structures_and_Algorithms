@@ -1,1 +1,10 @@
-8
+Prime
+Prime
+Not prime
+Prime
+Prime
+Not prime
+Prime
+Not prime
+Not prime
+Prime
