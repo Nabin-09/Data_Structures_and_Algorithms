@@ -1,0 +1,9 @@
+8
+A+B
+(A+B)*C
+A*(B+C)/D
+A+(B*C-(D/E^F)*G)*H
+a+b*(c^d-e)^(f+g*h)-i
+3+5*2/(7-4)
+((A+B)*C-(D-E))^(F+G)
+A*B+C*D
