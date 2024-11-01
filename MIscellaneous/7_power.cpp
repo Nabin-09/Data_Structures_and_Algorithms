@@ -20,12 +20,11 @@ typedef long double lld;
 ll power(ll n,ll pow) {
     if (pow == 0) return 1;  
     if (pow == 1) return n;  
-    ll temp = power(n, pow / 2);
-    temp = temp * temp;  
+    ll temp = power(n, pow / 2);  
     if (pow % 2 == 0) {
-        return temp;  
+        return temp*temp;  
     } else {
-        return temp * n; 
+        return temp *temp* n; 
     }
 }
 int main() {

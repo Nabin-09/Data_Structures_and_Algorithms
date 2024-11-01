@@ -1,16 +1,35 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+
 using namespace std;
-bool eval_and(bool a , bool b){
-    return a && b;
+class Node{
+    public :
+    int data ;
+    Node* next;
+    Node(int data1 , Node* next1 = nullptr){
+        data = data1;
+        next = next1;
+    }
+};
+Node* ArrToLL(vector<int> arr){
+    Node* head = new Node(arr[0]);
+    Node* temp = head;
+    for(int i = 1 ; i < arr.size() ; i++){
+        temp->next = new Node(arr[i]);
+        temp = temp -> next;
+    }
+    return head;
 }
-bool eval_or(bool a , bool b){
-    return a || b;
+
+void PrintLL(Node* head){
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<"  ";
+        temp = temp->next;
+    }
+
 }
-bool eval_implies(bool a , bool b){
-    return !a || b;
-}
-int main() 
-{
-  
-    return 0;
+int main(){
+    vector<int> arr = { 1 , 2 , 3 , 4  , 5 , 6};
+    PrintLL(ArrToLL(arr));
 }
