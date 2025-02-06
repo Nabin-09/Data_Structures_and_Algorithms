@@ -10,6 +10,15 @@ struct Node{
         left = right = nullptr;
     }
 };
+void Preorder(Node* root){
+    if(root == nullptr){
+        return ;
+    }
+    cout<<(root->data)<<" ";
+    Preorder(root -> left);
+    Preorder(root -> right);
+
+}
 int main(){
     Node* root = new Node(1);
     root->left = new Node(2);
@@ -22,4 +31,5 @@ int main(){
     root->right->right = new Node(8);
     root->right->right->left = new Node(9);
     root->right->right->right  = new Node(10);
+    Preorder(root);
 }
