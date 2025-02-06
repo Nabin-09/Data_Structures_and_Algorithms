@@ -1,4 +1,4 @@
-//Root Left Right
+//Left Root right 
 #include<iostream>
 using namespace std;
 struct Node{
@@ -10,14 +10,13 @@ struct Node{
         left = right = nullptr;
     }
 };
-void Preorder(Node* root){
-    if(root == nullptr){
+void Inorder(Node* tree){
+    if(tree == nullptr){
         return ;
     }
-    cout<<(root->data)<<" ";
-    Preorder(root -> left);
-    Preorder(root -> right);
-
+    Inorder(tree->left);
+    cout<<tree->data<<" ";
+    Inorder(tree->right);
 }
 int main(){
     Node* root = new Node(1);
@@ -31,5 +30,5 @@ int main(){
     root->right->right = new Node(8);
     root->right->right->left = new Node(9);
     root->right->right->right  = new Node(10);
-    Preorder(root);//T.C = O(N) and S.C = O(N)
+    Inorder(root);//T.C = O(N) and S.C = O(N)
 }
