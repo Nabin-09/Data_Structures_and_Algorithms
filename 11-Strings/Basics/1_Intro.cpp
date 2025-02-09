@@ -18,5 +18,8 @@ signed main(){
     //s.begin() return the index 0 and s.end() return the index after the last element
     reverse(s.begin() , s.end());//s.end() points outside the array
     cout<<s<<endl;//returns edcza 
-
+    //tolower and toupper works on characters and not whole string we need to use a loop to do so
+    //We can check if strings are lexicographical simply bas s < t or s > t , it will compare whole string
+    //If we sort 3+a+b+6+7 then we get ++++367ab
+    //s.front() gives first character and s.back() gives the last character
 }
