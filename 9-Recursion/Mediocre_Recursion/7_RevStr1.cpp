@@ -10,6 +10,6 @@ void solve(string s , int idx){
 int main() {
     string s;
     cin >> s;
-    solve(s, 0);
+    solve(s,0);
     return 0;
 }
