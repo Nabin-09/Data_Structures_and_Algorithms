@@ -2,36 +2,28 @@
 using namespace std;
 #define ll long long
 
-ll power(int base, int exp, ll n) {
-    ll result = 1;
-    for (int i = 0; i < exp; i++) {
-        if (result > n / base) return n + 1;  // prevent overflow
-        result *= base;
+ll power(ll mid , ll p , ll n){
+    ll res = 1;
+    for(int i = 0 ; i < p ; i++){
+        if(res > n / mid) return n + 1;
+        res *= mid;
     }
-    return result;
+    return res;
 }
 
 int main() {
-    ll p, n;
+    ll p , n;
     cin >> p >> n;
-
-    ll low = 1, high = n;
+    ll low = 1 , high = n ;
     ll ans = -1;
-
-    while (low <= high) {
-        ll mid = (low + high) / 2;
-        ll midPower = power(mid, p, n);
-
-        if (midPower == n) {
-            ans = mid;
-            break; // Found exact match
-        } else if (midPower > n) {
-            high = mid - 1;
-        } else {
-            low = mid + 1;
-        }
+    while(low <= high){
+        ll mid = (low+high)/2;
+        ll a = power(mid , p , n);
+        if(a == n) {ans = mid; break;}
+        else if(a > n) high = mid - 1;
+        else low = mid + 1;
     }
+    cout << ans << "\n";
 
-    cout << ans << endl;
     return 0;
 }
