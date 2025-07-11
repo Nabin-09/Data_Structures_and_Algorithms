@@ -36,6 +36,23 @@ class heap{
             cout << arr[i] <<" ";
         }
     }
+
+    void deleteFromHeap(){
+        if(size == 0) cout<<"Nothing to delete";
+        return;
+
+        arr[1] = arr[size];
+        size--;
+
+        //take root node to its correct postion
+        int i = 1;
+
+
+    }
+    
+
+
+
 };
 
 int main(){

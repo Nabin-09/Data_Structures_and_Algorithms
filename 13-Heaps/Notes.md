@@ -42,4 +42,87 @@ parent of 40 = 3/2 = 1st index(60) <br>
  - 55 is at 6th index , parent = (6/2) , 3rd index = 40<br>its smaller than 55 so swap
  - Repeat same until it reaches it position
 
+ ```c++
+ #include<bits/stdc++.h>
+
+using namespace std;
+
+class heap{
+    public :
+    int arr[100];
+    int size ;
+
+    heap(){
+        arr[0] = -1;
+        size = 0 ;
+    }
+
+    void insert(int val){
+
+        size = size+1;
+        int index = size;
+        arr[index] = val;
+        
+        while(index > 1){
+            int parent = index/2;
+
+            if(arr[parent]<arr[index]){
+                swap(arr[parent] , arr[index]);
+                index = parent;
+            }else{
+                return ;
+            }
+        }
+
+    }
+
+    void print(){
+        for(int i = 1 ; i <= size ; i++){
+            cout << arr[i] <<" ";
+        }
+    }
+};
+
+int main(){
+
+
+    heap h;
+    h.insert(50);
+    h.insert(55);
+    h.insert(53);
+    h.insert(52);
+    h.insert(54);
+
+    h.print(); //55 54 53 50 52 
+
+
+    return 0;
+}
+```
+
+T.C = O(logN)
+
+## Deletion of root node 
+
+            55 
+           /  \
+          54  53 
+         /  \
+        50   52
+
+### Steps to delete node : 
+
+  - Put the last node on the root node
+      
+           52 
+          /  \ 
+         54  53 
+        /  \ 
+        50  55
+
+  - Remove last node
+  - Propagate root node to its correct position
+  - check with children and keep replacing
+  
+
 
