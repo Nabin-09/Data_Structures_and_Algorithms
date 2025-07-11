@@ -39,3 +39,7 @@ parent of 40 = 3/2 = 1st index(60) <br>
  - Insert element at last index of array(eg 55)
  - Take it to its correct position
  - check if its parent is larger than the element
+ - 55 is at 6th index , parent = (6/2) , 3rd index = 40<br>its smaller than 55 so swap
+ - Repeat same until it reaches it position
+
+
