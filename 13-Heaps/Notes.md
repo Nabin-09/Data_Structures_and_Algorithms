@@ -124,5 +124,43 @@ T.C = O(logN)
   - Propagate root node to its correct position
   - check with children and keep replacing
   
+```c++
+void deleteFromHeap(){
+        if(size == 0) cout<<"Nothing to delete";
+        return;
+        
+        //Put last element into last element
+        arr[1] = arr[size];
+        size--;
+
+        //take root node to its correct postion
+        int i = 1;
+        while(i < size){
+            int leftI = 2 * i ;
+            int rightI = 2* i+1;
+            if(leftI< size && arr[i] < arr[leftI]){
+                swap(arr[i] , arr[leftI]);
+                i = leftI;
+            }
+            else if(rightI < size && arr[i] < arr[rightI]){
+                swap(arr[i] , arr[rightI]);
+                i = rightI;
+            }
+            else{
+                return ;
+            }
+        }
+    }
+    
+```
+
+## Heapify Algorithm
+
+Suppose we are given an array as input <br>
+our task it to convert it into a heap.<br>
+
+i/p : [54 , 53 , 55 , 52 , 50]
+
+
 
 
