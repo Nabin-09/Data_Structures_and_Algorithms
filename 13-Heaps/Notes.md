@@ -161,6 +161,39 @@ our task it to convert it into a heap.<br>
 
 i/p : [54 , 53 , 55 , 52 , 50]
 
+In a complete Binary Tree : <br>
+leaf nodes lie from -  **((n/2) + 1) to nth index**<br>
+We dont have a need to process leaf nodes as they are already in right place.
+
+clearly so we have to operate from n/2 th index to 0th index to sort. <br>
+
+```cpp
+
+void heapify(int arr[] , int n , int i ){
+        int largest = i ;
+        int left = 2*i;
+        int right = 2*i + 1;
+
+        if(left < n && arr[largest] < arr[left]){
+            largest = left;
+        }
+        if(right < n && arr[largest] < arr[right]){
+            largest = right;
+        }
+
+        if(largest != i){ //check if largest has been updated or not 
+
+            swap(arr[largest] , arr[i]);
+            heapify(arr , n , largest);
+
+        }
+    }
+
+    int arr[6] = {-1 , 54 , 53 , 55 , 52 , 50}; 
+    int n = 5;
+    for(int i = n / 2 ; i > 0 ; i--){
+        h.heapify(arr , n , i);
+    }
 
 
 

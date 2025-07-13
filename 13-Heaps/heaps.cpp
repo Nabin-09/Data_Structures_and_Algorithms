@@ -62,12 +62,28 @@ class heap{
                 return ;
             }
         }
-
-
     }
     
 
+    void heapify(int arr[] , int n , int i ){
+        int largest = i ;
+        int left = 2*i;
+        int right = 2*i + 1;
 
+        if(left < n && arr[largest] < arr[left]){
+            largest = left;
+        }
+        if(right < n && arr[largest] < arr[right]){
+            largest = right;
+        }
+
+        if(largest != i){ //check if largest has been updated or not 
+
+            swap(arr[largest] , arr[i]);
+            heapify(arr , n , largest);
+
+        }
+    }
 
 };
 
@@ -84,6 +100,13 @@ int main(){
     h.print(); //55 54 53 50 52 
 
     h.deleteFromHeap();
+
+
+    int arr[6] = {-1 , 54 , 53 , 55 , 52 , 50}; 
+    int n = 5;
+    for(int i = n / 2 ; i > 0 ; i--){
+        h.heapify(arr , n , i);
+    }
 
 
 
