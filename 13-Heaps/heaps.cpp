@@ -118,6 +118,12 @@ int main(){
     }
 
 
+    h.heapSort(arr , n);
+
+    for(int i = 1 ; i <= n ; i++){
+        cout << arr[i] << " ";
+    }cout << endl;
+
 
     return 0;
 }

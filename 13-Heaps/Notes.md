@@ -217,3 +217,28 @@ clearly we can see the top element is largest in array : <br>
 - now arr becomes [60 , 50 , 55 , 45] (brought root to correct posi)
 - swap root with last element [45 , 50 , 55]
 - repeat steps until all elements are removed
+
+
+### Priority Queues
+
+We can use min heaps and max heaps using priority queues .
+<br> Include #include<queue> to use this stl.<br>
+
+Declaration : <br>
+```cpp
+priority_queue<int> pq;
+
+pq.push(4);
+pq.push(5);
+pq.push(6);
+pq.push(8);
+
+pq.top(); //gives element at top
+pq.pop() ; //removes root
+pq.size() // gives size
+pq.empty() ; //returns true or false if pq is empty or not
+
+priority_queue<int, vector<int> , greater<int>> minheap;
+
+//this is syntax to create min heap and all the same functions work for it as well
+```
