@@ -1,6 +1,22 @@
 # Heaps
 
+
 Heap is a Data Structure that is a complete Binary tree and comes with Heap Order Property
+
+---
+
+## 📑 Index
+
+- [Complete Binary Tree](#complete-binary-tree)
+- [Max-Heap](#max-heap)
+- [Min-Heap](#min-heap)
+- [Insertion in a heap](#insertion-in-a-heap)
+- [Deletion of root node](#deletion-of-root-node)
+- [Heapify Algorithm](#heapify-algorithm)
+- [Heap Sort](#heap-sort)
+- [Priority Queues](#priority-queues)
+
+---
 
 ## Complete Binary Tree 
 
