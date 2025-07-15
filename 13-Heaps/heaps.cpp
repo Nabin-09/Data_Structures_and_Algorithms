@@ -85,6 +85,15 @@ class heap{
         }
     }
 
+    void heapSort(int arr[] , int n){
+        int t = n;
+        while(t > 1){
+            swap(arr[t] , arr[1]);
+            size--;
+            heapify(arr , size , 1);
+        }
+    }
+
 };
 
 int main(){

@@ -194,6 +194,26 @@ void heapify(int arr[] , int n , int i ){
     for(int i = n / 2 ; i > 0 ; i--){
         h.heapify(arr , n , i);
     }
+```
+## Heap Sort : 
+ 
 
+         70 
+        /  \ 
+       60  55
+      /  \
+     45  50
 
+we need to sort elements in here : 
+arr = [X , 70 , 60 , 55 , 45 , 50]
 
+clearly we can see the top element is largest in array : <br>
+
+### <u>Algorithm : </u>
+
+- swap a[1] with a[n]
+- decrease size meaning remove 70 as a node arr= [50 , 60 , 55 , 45]
+- bring root node to correct position
+- now arr becomes [60 , 50 , 55 , 45] (brought root to correct posi)
+- swap root with last element [45 , 50 , 55]
+- repeat steps until all elements are removed
