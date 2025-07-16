@@ -18,5 +18,21 @@
  n . f(n-1)
 <br>
 
+### Tail Recursion VS head recursion :
+
+In tail recursion , the recursive call is the last intruction of the function , but in case of <br> it can be anywhere in the program.
 
 
+Program to print numbers :
+```cpp
+void print(int i , int n ){
+    if (i == n) return;
+    cout << i << " ";
+    print(++i , n);
+}
+int main(){
+    int n ;
+    cin >> n;
+    print(1 ,n);
+}
+```
