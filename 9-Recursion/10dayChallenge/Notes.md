@@ -36,3 +36,11 @@ int main(){
     print(1 ,n);
 }
 ```
+
+## Recursion in arrays :
+
+### Q. Tell if an array is sorted or not ?
+
+Given input : array of length n<br>
+
+

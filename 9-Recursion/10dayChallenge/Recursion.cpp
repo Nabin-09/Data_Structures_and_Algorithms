@@ -7,8 +7,13 @@ using namespace std;
 //     cout << i << " ";
 //     print(++i , n);
 // }
+
+bool isSorted(int arr[] , int n){
+    
+}
 int main(){
     int n ;
     cin >> n;
     // print(1 ,n);
+    vector<int>arr = {2 , 5 , 8 , 12 , 15 , 21};
 }
