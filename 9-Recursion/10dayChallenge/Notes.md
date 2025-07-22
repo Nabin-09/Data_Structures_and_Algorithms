@@ -47,6 +47,10 @@ Solve some of the basic Questions like :
 - Linear Search 
 - Binary Search 
 
+## Recursion in strings : 
+
+Solve these basic Questions : 
+ - Reverse a String
 
 
 
