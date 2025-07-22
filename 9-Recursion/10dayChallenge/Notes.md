@@ -39,8 +39,15 @@ int main(){
 
 ## Recursion in arrays :
 
-### Q. Tell if an array is sorted or not ?
+Solve some of the basic Questions like : 
+- Say Digits
+- Fibonacci Series
+- Count Stairs
+- If Array is Sorted 
+- Linear Search 
+- Binary Search 
 
-Given input : array of length n<br>
+
+
 
 
