@@ -52,6 +52,7 @@ Solve some of the basic Questions like :
 Solve these basic Questions : 
  - Reverse a String
  - Palindrome String
+ - Binary Exponentiation
  
 
 
