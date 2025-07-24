@@ -33,3 +33,30 @@ int main() {
     return 0;
 }```
 
+```cpp
+
+class Hero{
+    int health ; //property of class
+};
+
+int main(){
+
+    Hero h1 ; //creation of object of type Hero
+    cout << "Size : "<<sizeof(h1) << endl; // Size : 4
+    return 0;
+}
+```
+Hence the size of object is the total size of properties of Class.<br>
+
+*Empty class has 1 byte of space allocated to keep track of it* <br>
+
+We can use #include<Hero.cpp> , if we want to use classes from another file.<br>
+
+We can access data members using the '.' operator.
+
+## Access Modifiers : 
+
+ - Public : We can use the data member anywhere we want.
+ - Private : By default we have private access modifier ,        everyone <br> in the class itself can only use these data members.
+ - Protected : 
+
