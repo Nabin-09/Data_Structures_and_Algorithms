@@ -59,6 +59,10 @@ Solve these basic Questions :
 Solve these Questions to improve implementation
 
  - Bubble Sort
+ - Insertion Sort
+ - Selection Sort
+ - Merge two sorted arrays
+ - **Merge Sort**
 
 
 
