@@ -134,4 +134,21 @@ class Hero {
         this->health = health ; //health of the contructor has the value of object's health now.
     }
 }
+```
+
+### ` Copy Constructor : `
+
+IF we want to copy values of one data member to another we use Copy Contructors.<br>
+
+Using the above example : <br>
+```cpp
+int main(){
+    Hero Suresh;
+    Suresh.setHealth(70);
+    Suresh.setLevel('C');
+
+    Hero Ramesh(Suresh);//Implementation of Copy Constructor
+}
+
+```
 
