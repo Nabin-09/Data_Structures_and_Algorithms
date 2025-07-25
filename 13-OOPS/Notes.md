@@ -116,6 +116,22 @@ class Hero {
 
 int main(){
     Hero Ramesh;//only creating a contructor prints Hero Created.
+    Hero *Ram = new Hero(); // calls contructor similarly
 }
 ```
+
+### `Paramtererised Contructor : `
+
+`This keyword` : It is a pointer that points towards address of the current object.
+
+```cpp
+class Hero {
+    private : 
+    int health;
+
+    public : 
+    Hero(int health){
+        this->health = health ; //health of the contructor has the value of object's health now.
+    }
+}
 
