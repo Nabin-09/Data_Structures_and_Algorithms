@@ -142,12 +142,25 @@ IF we want to copy values of one data member to another we use Copy Contructors.
 
 Using the above example : <br>
 ```cpp
+
+class Hero{
+    private : 
+    int health;
+
+    public :
+    Hero(Hero &temp){
+        this->health = temp -> health;
+        this -> level = temp -> level;
+        //Defining our own constructor
+    }
+};
 int main(){
     Hero Suresh;
     Suresh.setHealth(70);
     Suresh.setLevel('C');
 
     Hero Ramesh(Suresh);//Implementation of Copy Constructor
+    //We can also write our own Copy Constructor
 }
 
 ```
