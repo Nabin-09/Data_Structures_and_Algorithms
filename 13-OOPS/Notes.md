@@ -103,3 +103,19 @@ cout << (*b).level; // referencing to data members .
 cout << b->level; // better syntax
 ```
 
+Whenever an object is created a constructor is called.<br>
+It has no return type and at default its name is same as class.<br>
+
+```cpp
+class Hero {
+    public : 
+    Hero(){
+        cout << "Hero Created";
+    }
+};
+
+int main(){
+    Hero Ramesh;//only creating a contructor prints Hero Created.
+}
+```
+
