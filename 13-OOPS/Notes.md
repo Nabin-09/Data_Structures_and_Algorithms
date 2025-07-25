@@ -137,7 +137,7 @@ class Hero {
 ```
 
 ### ` Copy Constructor : `
-
+**Very Important Concept**  -- : <br> 
 IF we want to copy values of one data member to another we use Copy Contructors.<br>
 
 Using the above example : <br>
@@ -148,7 +148,7 @@ class Hero{
     int health;
 
     public :
-    Hero(Hero &temp){
+    Hero(Hero &temp){   //we have to pass by reference
         this->health = temp -> health;
         this -> level = temp -> level;
         //Defining our own constructor
@@ -164,4 +164,8 @@ int main(){
 }
 
 ```
+
+### `Deep and Shallow Copy` : 
+
+
 
