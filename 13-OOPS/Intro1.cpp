@@ -32,5 +32,6 @@ int main(){
 
     Hero h1 ; //creation of object of type Hero
     cout << "Size : "<<sizeof(h1) << endl; // Size : 4
+    cout <<"LOL"<<"\n";
     return 0;
 }

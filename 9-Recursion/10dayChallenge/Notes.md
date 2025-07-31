@@ -63,6 +63,9 @@ Solve these Questions to improve implementation
  - Selection Sort
  - Merge two sorted arrays
  - **Merge Sort**
+ - **Quick Sort**
 
+Some Other very famous Problems :
+ - Generating Power Set of an array
 
 

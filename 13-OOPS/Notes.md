@@ -164,8 +164,98 @@ int main(){
 }
 
 ```
+## `Encapsulation` : 
+Wrapping up data member and functions into a single entity.
+<Br>
 
-### `Deep and Shallow Copy` : 
+`Fully Encapsulation Class : ` All the data members and functions are marked Private and cannot be accessed <br> directly by any other class.
+
+`Advantages of Encapsulation` : 
+ - Information/Data Hiding 
+ - If we want we can make class read-only.
+ - Code Reusability
+
+### `Implementation` : 
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+class Student {
+    private :
+
+    string name;
+    int age ;
+    int height;
+
+    public : 
+    int getAge(){
+        return this->age;
+    }//read-only, encapsulation achieved
+};
+
+int main(){
+    Student first;
+
+    cout <<"Sab Sahi chal rha bandhu"<<"\n";
+}
+```
+## `Inheritance` :
+
+Inheritance in object-oriented programming (OOP) is a mechanism that allows a class (child class<br>or subclass) to inherit properties and methods from another class (parent class or superclass).
+
+The one that gives properties is called SuperClass and the one that <br> inherits is called subClass.
+
+Such as `Human` is parent class and `Male` and `Female` are subclasses.
+
+```cpp
+#include<iostream>
+using namespace std;
+
+class Human{
+    public : 
+    int height ;
+    int weight ;
+    int age ;
+
+    public : 
+    int getAge(){
+        return this->age;
+    }
+    int setWeight(int w){
+        this -> weight = w;
+    }
+};
+
+class Male : public Human{
+    public :
+    string color ;
+
+    void sleep(){
+        cout <<"Male Sleeping"<<endl;
+    }
+};
+
+int main(){
+    Male object1;
+    cout << object1.age<<endl;//garbage value
+    cout << object1.color<<endl;//empty string
+
+    object1.sleep(); //Male Sleeping
+
+    object1.setWeight(80);
+    cout << object1.weight;//80
+    return 0;
+}
+```
+>Learn about protected access specifier and how access specifiers work for derived classes.<br>
+
+### `Types of Inheritance` :
+- Single Inheritance : When a class inherits a single class.
+- MultiLevel Inheritance : Inheritance in Multiple Levels
+- 
+
+
 
 
 
