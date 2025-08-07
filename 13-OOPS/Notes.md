@@ -5,7 +5,7 @@ A programming paradigm where everything revolves around objects.<br>
 ## Classes and Objects
 
 
-### ✅ Class:
+### Class:
 A class is a user-defined blueprint for creating objects. It bundles data members and member functions together.
 
 ```cpp
@@ -20,7 +20,7 @@ public:
 };
 ```
 
-### ✅ Object:
+###  Object:
 An object is an instance of a class. It is used to access members of the class.
 
 ```cpp
@@ -253,7 +253,141 @@ int main(){
 ### `Types of Inheritance` :
 - Single Inheritance : When a class inherits a single class.
 - MultiLevel Inheritance : Inheritance in Multiple Levels
-- 
+- Multiple Inheritance : when a class inherits properties from multiple classes.
+- Hierarchical inheritance : One class serves as parent class for more than one class.
+- Hybrid Inheritance : It is a combination of more than one type of inheritance.
+
+### `Inheritance Ambihuity` : 
+
+Suppose C inherits A and B and both the classes A and B have function with same name what will happen ? 
+
+Answer : Use the scope resolution operator(::).
+
+suppose A has func() and B has func().
+```cpp
+class A {
+    public :
+    int func(int a){
+        return a;
+    }
+};
+
+class B {
+    public :
+    int func(int a){
+        return a;
+    }
+};
+class C : public A , public B {
+    public : 
+    int a 
+};
+
+int main(){
+    C obj;
+    obj.A::func(); //to call A's function 
+    obj.B.func(); // to call B's function
+}
+```
+## `Polymorphism : `
+
+When one thing exists as many forms like my father is a husband to someone , son to someone , uncle to someone , etc <br>
+
+- ### `Compile time polymorphism : `
+    We will come to know what entities exist as what during compilation<br>.
+    It is also called static polymorphism.
+    - `Function Overloading` : 
+    ```cpp
+    class A{
+        public : 
+        void Say(){
+            cout <<"Hello";
+        }
+        void Say(string name){
+            cout<<"Yo "<<name<<endl;
+        }//initially we will not be able to run this as 
+        //both of them have the same name
+        //giving a paramter changes the signature of function and then we can call it
+        //we can do further continue it altering input argument
+        //or data types of argument.
+    };
+    ```
+    **Default Argument** : value provided to a function declaration automatically <br> assigned by compiler if the function's caller doesn't provide a value for the argument.<br>
+
+    ```cpp
+    int add (int a , int b , int c = 0 , int d = 0 , int e = 0){
+        return (a+b+c+d+e);
+    }
+    int main(){
+        cout <<add(10 , 20);
+        cout << add(10 , 20 , 30);
+        cout << add(10 , 20 , 30 , 40);//all of them work.
+    }
+    ```
+    - `Operator Overloading` : 
+    What if we want an operator to do a customised task , that is where <br> operator overloading comes into play.
+
+    >see the list of operators that can be overloaded and the ones that cannot be overloaded.<br>
+    ```cpp
+    class B{
+        public :
+        int a ;
+        int b;
+        public : 
+        int add(){
+            return a+b;
+        }
+
+        void operator+ (B &obj){
+            int value1 = this->a;
+            int value2 = obj.a;
+            cout <<output <<value2 - value1<<" "
+        }
+    };
+
+    int main (){
+        B obj1 , obj2;
+
+        obj1.a = 4;
+        obj2.a = 7;
+
+        obj1 + obj2; //output 3
+    }
+- ### `Run time polymorphism : `.
+    This is also called dynamic Polymorphism.<br>
+    - Method Overriding : 
+    Suppose a class inherits a method from his parent class and then he wants to <br> change the implementation of that method , we use method overriding. 
+    <br>
+    Rules : 
+      - functions should have same name.
+      - functions should have same arguments.
+      - and the class must be inherited.
+    ```cpp
+    class Parent{
+        public : 
+            void show(){
+                cout << "Inside parent class";
+            }
+    };
+    class subClass : public Parent{
+        public : void show(){
+            cout << "Inside SubClass ";
+        }
+    };
+
+    int main (){
+        subClass o1;
+        o1.show();// Inside subClass1
+    }
+    ```
+
+## `Abstraction : `
+
+Information hiding , showing only what's necessary to the user.
+- Abstraction using classes : The class helps us to group data members and member function <br> using available access specifiers. A class can decide what will be visible 
+- Abstraction in header files : for eg the pow() function in header file <br> math.h does it task without letting us know what is doing in background.
+
+
 
 
 
